@@ -36,14 +36,14 @@ sheety_endpoint = 'https://api.sheety.co/9a5f2f38c579638928123fbfa4eab617/workou
 date = datetime.now().strftime('%m/%d/%Y')
 time = datetime.now().strftime('%H:%M:%S')
 
-for excercise in results["exercises"]
+for exercise in results['exercises']:
     sheet_input = {
         'workout':{
             'date': date,
             'time': time,
-            'excercise': excercise['name'],
-            'duration': excercise['duration_min'],
-            'calories': excercise['nf_calories',]
+            'exercise': exercise['name'],
+            'duration': exercise['duration_min'],
+            'calories': exercise['nf_calories'],
 
         }
     }
@@ -52,7 +52,7 @@ for excercise in results["exercises"]
         url=sheety_endpoint, 
         json=sheet_input, 
         auth=(
-            USERNAME, 
+            USERNAME,
             PASSWORD,
 
         )
