@@ -4,6 +4,8 @@ from datetime import datetime
 
 APPLICATION_ID = os.environ.get("APP_ID")
 APPLICATION_KEY = os.environ.get("APP_KEY")
+USERNAME = os.environ.get("UNAME")
+PASSWORD = os.environ.get("PW")
 
 # connecting to nutritionx api.
 NL_ENDPOINT = 'https://trackapi.nutritionix.com/v2/natural/exercise'
@@ -46,5 +48,12 @@ for excercise in results["exercises"]
         }
     }
 
-    sheet_response = 
+    sheet_response = requests.post(
+        url=sheety_endpoint, 
+        json=sheet_input, 
+        auth=(
+            USERNAME, 
+            PASSWORD,
 
+        )
+    )
